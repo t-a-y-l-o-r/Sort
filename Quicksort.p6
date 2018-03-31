@@ -53,9 +53,3 @@ sub swap(@myArray, Int $left, Int $right){
   @myArray[$left] = @myArray[$right];
   @myArray[$right] = $temp;
 }
-
-
-sub MAIN{
-  my @myArray = 3, 3, 1, 1, 2;
-  @myArray = quickSort(@myArray);
-}
