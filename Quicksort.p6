@@ -4,12 +4,18 @@ goal: To implement quickSort in perl 6:
 =end comment
 
 
+=begin comment
+sorts the passed array from start to end
+=end comment
 sub quickSort (@myArray) {
   my $start = 0;
   my $end = @myArray.Int - 1;
   qSort(@myArray, $start, $end);
 }
 
+=begin comment
+Using divide & conquor recursively quick sorts the array
+=end comment
 sub qSort (@myArray, Int $start is rw, Int $end is rw) {
   my $left = $start;
   my $right = $end;
@@ -39,7 +45,10 @@ sub qSort (@myArray, Int $start is rw, Int $end is rw) {
   @myArray;
 }
 
-sub swap(@myArray, Int $left, $right){
+=begin comment
+Swaps the values at the fiven positions
+=end comment
+sub swap(@myArray, Int $left, Int $right){
   my $temp = @myArray[$left];
   @myArray[$left] = @myArray[$right];
   @myArray[$right] = $temp;
@@ -47,40 +56,6 @@ sub swap(@myArray, Int $left, $right){
 
 
 sub MAIN{
-  # my @myArray = 3, 2, 1, 1, 2;
-
-  # my @myArray = 1, 2, 3, 4, 5, 6;
-  # my @myArray = 6, 5, 4, 3, 2, 1;
-  # my @myArray = 1, 2, 3, 1, 2, 3;
-  # my @myArray = 3, 2, 1, 3, 2, 1;
-  # my @myArray = 1, 2, 3, 3, 2, 1;
-  # my @myArray = 3, 2, 1, 1, 2, 3;
-  # my @myArray = 1, 6, 2, 5, 3, 4;
-  # my @myArray = 6, 1, 5, 2, 4, 3;
-  # my @myArray = 4, 3, 5, 2, 6, 1;
-  # my @myArray = 3, 4, 2, 5, 1, 6;
-  # my @myArray = 1, 1, 2, 2, 3, 3;
-  # my @myArray = 3, 3, 2, 2, 1, 1;
-  # my @myArray = 2, 2, 1, 1, 3, 3;
-  # my @myArray = 3, 3, 1, 1, 2, 2;
-
-  # my @myArray = 1, 2, 3, 4, 5;
-  # my @myArray = 6, 5, 4, 3, 2;
-  # my @myArray = 1, 2, 3, 1, 2;
-  # my @myArray = 3, 2, 1, 3, 2;
-  # my @myArray = 1, 2, 3, 3, 2;
-  # my @myArray = 3, 2, 1, 1, 2;
-  # my @myArray = 6, 2, 5, 3, 4;
-  # my @myArray = 1, 5, 2, 4, 3;
-  # my @myArray = 4, 3, 5, 2, 6;
-  # my @myArray = 3, 4, 2, 5, 1;
-  # my @myArray = 1, 1, 2, 2, 3;
-  # my @myArray = 3, 3, 2, 2, 1;
-  # my @myArray = 2, 2, 1, 1, 3;
-  my @myArray = 3, 3, 1, 1, 2; #`(
-  )
-
-  say @myArray;
+  my @myArray = 3, 3, 1, 1, 2;
   @myArray = quickSort(@myArray);
-  say @myArray;
 }
