@@ -1,5 +1,6 @@
 =begin comment
-asda
+Author: Taylor Cochran
+goal: To implement quickSort in perl 6:
 =end comment
 
 
