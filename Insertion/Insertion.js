@@ -22,36 +22,33 @@ const arraysEqual = (array1, array2) => {
   return true;
 }
 
-
+// cleaner version
 /*
  * Sorts the given array in place
  * using insertion sort.
  * Time: O(n^2)
  * Space: O(1)
  * */
-let insertionSort = (data) => {
-  if (!Array.isArray(data) || !data.length) {
-    return data;
+let insertionSort = (array) => {
+  if (!Array.isArray(array) || !array.length) {
+    return array;
   }
-  let pointer = 1;
-  let sorting = pointer < data.length;
-  let currentVal = 0;
-  while (sorting) {
-    currentVal = data[pointer];
-    let last = data.slice(pointer).length;
-    for (let i = 0; i < last; i++) {
-      let temp = data[i];
-      if (currentVal < temp) {
-        data = data.slice(0, pointer).concat(data.slice(pointer + 1, data.length));
-        data.splice(i, 0, currentVal);
-        break;
-      }
+  for (var i = 1; i < array.length; i++) {
+    let currentValue = array[i];
+    let previousIndex = i - 1;
+    let sorting = previousIndex >= 0 && array[previousIndex] > currentValue;
+    while (sorting) {
+      array[previousIndex + 1] = array[previousIndex];
+      previousIndex--;
+      sorting = previousIndex >= 0 && array[previousIndex] > currentValue;
     }
-    pointer ++;
-    sorting = pointer < data.length;
+    array[previousIndex + 1] = currentValue;
+
   }
-  return data;
-}
+  return array;
+};
+
+
 
 // generate the random array
 let randomArray = [];
