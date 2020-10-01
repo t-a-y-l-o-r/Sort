@@ -1,2 +1,2 @@
 # Sort
-Quick sort implemented in Perl 6
+An assortment of sorting algorithms
