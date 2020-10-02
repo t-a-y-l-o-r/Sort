@@ -18,3 +18,17 @@ An assortment of sorting algorithms
   2. Online
   3. Stable
 
+## Selection Sort
+- Performance:
+
+  Worst Case: `O(n^2)`
+
+- Space:
+
+  `O(1)` given the algorithm is done in place.
+
+- Special properties.
+  1. In-place
+  2. Able to perform in n-1 swaps
+  3. Worse than inserstion sort in most ways
+
